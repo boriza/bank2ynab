@@ -768,6 +768,7 @@ class YNAB_API(object):  # in progress (2)
         date = this_trans[0]
         payee = this_trans[1]
         category = this_trans[2]
+        category_id = this_trans[6]
         memo = this_trans[3]
         amount = string_num_diff(this_trans[4], this_trans[5])
 
@@ -782,7 +783,7 @@ class YNAB_API(object):  # in progress (2)
             "cleared": "cleared",
             "import_id": self.create_import_id(amount, date, transactions),
             "payee_id": None,
-            "category_id": None,
+            "category_id": category_id,
             "approved": False,
             "flag_color": None
         }
